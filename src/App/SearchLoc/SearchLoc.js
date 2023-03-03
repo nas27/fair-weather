@@ -28,7 +28,7 @@ export const SearchLoc = ( { onCityFound }) => {
     };
 
     return (
-        <div className="styles">
+        <div className="styles.main">
             <input
                 placeholder="Enter a postal code"
                 value={p_code}
