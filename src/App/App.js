@@ -22,13 +22,14 @@ export const App = () => {
 
   
 
-  //function to check digital & add leading zero if single (workaround for api response)
+  //function to check digit & add leading zero if single (workaround for api response)
   const iconNum = (num) => {
+    //this converts num to string by adding empty string
       const stringNum = num + '';
       const stringLen = stringNum.length;
 
       if (stringLen === 1) {
-        return '0' + stringNum; //4 becomes 04
+        return '0' + stringNum; //7 becomes 07 to satisfy url requirements
       } else {
         return stringNum;
       }
