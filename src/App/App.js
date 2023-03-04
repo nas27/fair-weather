@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { WeatherDay } from "../WeatherDay/WeatherDay";
-import styles from "./styles.module.css";
-import { apiKey } from "../env";
+import { WeatherDay } from "/Users/nastasia/Documents/Projects/fair-weather/src/WeatherDay/WeatherDay.js";
+import styles from './styles.module.css';
+import { apiKey } from "/Users/nastasia/Documents/Projects/fair-weather/src/env.js";
 import { SearchLoc } from "./SearchLoc/SearchLoc";
 
 //arrow function short n sweet syntax
@@ -48,7 +48,6 @@ function convertToCelcius(fahrenheit)
   const apiUrl = `http://dataservice.accuweather.com/forecasts/v1/daily/5day/locationKey=${locationKey}?apikey=${apiKey}`;
   //const apiUrl = 'http://dataservice.accuweather.com/forecasts/v1/daily/5day/locationKey=49543_PC?apikey=7Eo1vG2AlMxgC3GpWxTAu89cUQ8xsSAu';
   //to get around CORS security feature
-  
 
 
 
@@ -82,6 +81,7 @@ function convertToCelcius(fahrenheit)
             weatherIcon: iconNum(df.Day.Icon),
             dateDay: daysofWeek[new Date(df.Date).getDay()],
             }
+            
         }))
       });
     }
@@ -90,10 +90,12 @@ function convertToCelcius(fahrenheit)
     //whenever we get a new location, this block will rerun
 }, [locationKey]);
 
+
 //container for 5 days, map each return item to its own div
 // !!weatherInfo checks if weather if is Not undefined-->
-
   return (
+    
+
     <div>
       <SearchLoc
         onCityFound={ cityInfo => {
@@ -102,19 +104,19 @@ function convertToCelcius(fahrenheit)
           setLocation(cityInfo.cityName + ', ' + cityInfo.province);
         }}
       />
-          <h1>{location}</h1>
+        <h1 className={styles.header}>{location}</h1>
+
 
         <div className={styles.main}>
-
-
           {!!weatherInfo && weatherInfo.map((i, index) => (
+
         <div className={styles.day} key={index}>
-            <WeatherDay 
-            min={i.min} 
-            max={i.max} 
-            weatherType={i.weatherType} 
-            weatherIcon={i.weatherIcon}
-            dateDay={i.dateDay}
+            <WeatherDay
+              min={i.min} 
+              max={i.max} 
+              weatherType={i.weatherType} 
+              weatherIcon={i.weatherIcon}
+              dateDay={i.dateDay}
             />
         </div>
         ))}

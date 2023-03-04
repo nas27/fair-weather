@@ -1,0 +1,16 @@
+.main button {
+    padding:5px;
+    margin:10px;
+    background-color:#474747;
+    color: #fff;
+    border:none;
+    border-radius:10px;
+}
+
+.main input {
+    
+    padding: 4px 8px 4px 8px;
+    border-radius:5px;
+    text-align: center;
+    line-height: 1.5;
+}

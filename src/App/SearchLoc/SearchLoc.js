@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { apiKey } from "../../env";
 import { proxyUrl } from "../App";
-import styles from '/Users/nastasia/Documents/Projects/fair-weather/src/App/styles.module.css';
+import styles from './styles.module.css';
+
 
 
 export const SearchLoc = ( { onCityFound }) => {
@@ -28,7 +29,7 @@ export const SearchLoc = ( { onCityFound }) => {
     };
 
     return (
-        <div className="styles.main">
+        <div className={styles.main}>
             <input
                 placeholder="Enter a postal code"
                 value={p_code}

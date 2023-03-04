@@ -1,18 +1,27 @@
 .main {
     display:flex;
+    
+    align-items: stretch;
+    justify-content: stretch;
+    background-color: #f1f1f1;
+    width:fit-content;
 
 }
 
+
+
 .day {
     margin:10px;
-    background-color: rgb(92, 87, 87);
+    color: rgb(42, 0, 82);
+    background-color: rgb(181, 234, 196);
     border-radius: 5px;
+    justify-content: center;    
     padding: 10px;
-    
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
     font-size: 11px;
+}
+
+
+.header {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color:maroon;
 }
